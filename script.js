@@ -20,7 +20,13 @@ function submitText(event){
     `
     let tableRowLocation = document.getElementById("salaryTable"); 
     tableRowLocation.innerHTML += newTableRowData; 
-    
+
+    document.getElementById('firstNameText').value='';
+    document.getElementById('lastNameText').value='';
+    document.getElementById('idText').value='';
+    document.getElementById('titleText').value='';
+    document.getElementById('annualSalaryText').value='';
+
 }
 
 function deleteRow(event){
