@@ -37,6 +37,11 @@ function submitText(event){
 
     let updatedMonthlySalary = document.getElementById("salaryCount")
     updatedMonthlySalary.innerText = (monthlySalaryTotal); 
+
+    if (monthlySalaryTotal > 20000){
+        document.getElementById('footer').style.color='white'; 
+        document.getElementById('footer').style.backgroundColor='red'; 
+    }
 }
 
 function deleteRow(event){
@@ -44,4 +49,5 @@ function deleteRow(event){
     let toDelete =buttonClicked.parentElement.parentElement;
     toDelete.remove(); 
 }
+
 
