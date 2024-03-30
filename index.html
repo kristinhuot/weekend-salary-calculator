@@ -15,25 +15,31 @@
     <h2>Add Employee</h2>
       <form>
         <input
-          id="firstNameInput"
+          data-testid="firstNameInput"
+          id="firstNameText"
           placeholder="Employee First Name"
           type="text">
         <input
-          id="lastNameInput"
+          data-testid="lastNameInput"
+          id="lastNameText"
           placeholder="Employee Last Name"
           type="text">
         <input
-          id="idInput"
+          data-testid="idInput"
+          id="idText"
           placeholder="Employee ID Number"
           type="number">
         <input
-          id="titleInput"
+          data-testid="titleInput"
+          id="titleText"
           placeholder="Job Title"
           type="text">
         <input
-          id="annualSalaryInput"
+          data-testid="annualSalaryInput"
+          id="annualSalaryText"
           placeholder="Annual Salary"
           type="number">
+          <button data-testid="submitButton" onclick="submitText(event)">Submit</button>
       </form>
     <h2>Employees</h2>
       <table>
@@ -45,6 +51,7 @@
           <th>Annual Salary</th>
           <th></th>
         </thead>
+        <tbody id ="salaryTable"></tbody>
       </table>
   </main>
   <footer>
