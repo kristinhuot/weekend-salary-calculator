@@ -1,4 +1,9 @@
-let salariesAdded = 0; 
+let monthlySalaryTotal = 0; 
+
+// let annualSalary = document.getElementById('annualSalaryText').value
+// let monthlySalary = annualSalary / 12; 
+
+// monthlySalaryTotal += Number(document.getElementById('annualSalaryText').value)
 
 function submitText(event){
     event.preventDefault();
@@ -27,6 +32,11 @@ function submitText(event){
     document.getElementById('titleText').value='';
     document.getElementById('annualSalaryText').value='';
 
+    let salaryDividedByTwelve = Number(salaryEntry)/12; 
+    monthlySalaryTotal += Math.round(Number(salaryDividedByTwelve)); 
+
+    let updatedMonthlySalary = document.getElementById("salaryCount")
+    updatedMonthlySalary.innerText = (monthlySalaryTotal); 
 }
 
 function deleteRow(event){
