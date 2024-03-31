@@ -38,10 +38,11 @@ function submitText(event){
     let updatedMonthlySalary = document.getElementById("salaryCount")
     updatedMonthlySalary.innerText = (monthlySalaryTotal); 
 
+    let amount = document.getElementById("over-budget"); 
+
     if (monthlySalaryTotal > 20000){
-        document.getElementById('footer').style.color='white'; 
-        document.getElementById('footer').style.backgroundColor='red'; 
-    }
+        amount.classList.toggle("salaryThresholdStyle");
+        }
 }
 
 function deleteRow(event){
