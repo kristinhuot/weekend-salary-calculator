@@ -35,15 +35,20 @@ function submitText(event){
     let salaryDividedByTwelve = Number(salaryEntry)/12; 
     monthlySalaryTotal += Math.round(Number(salaryDividedByTwelve)); 
 
-    let updatedMonthlySalary = document.getElementById("salaryCount")
-    updatedMonthlySalary.innerText = (monthlySalaryTotal); 
+    let updatedMonthlySalaryDisplay = document.getElementById("salaryCount")
+    updatedMonthlySalaryDisplay.textContent = (monthlySalaryTotal); 
 
-    let amount = document.getElementById("over-budget"); 
+    let footer = document.getElementById('footer'); 
 
     if (monthlySalaryTotal > 20000){
-        amount.classList.toggle("salaryThresholdStyle");
+        footer.classList.toggle("over-budget");
         }
+
 }
+
+
+    
+
 
 function deleteRow(event){
     let buttonClicked = event.target
