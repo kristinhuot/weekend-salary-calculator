@@ -1,18 +1,15 @@
 let monthlySalaryTotal = 0; 
+//created variable to hold the updated monthly salary total 
 
-// let annualSalary = document.getElementById('annualSalaryText').value
-// let monthlySalary = annualSalary / 12; 
 
-// monthlySalaryTotal += Number(document.getElementById('annualSalaryText').value)
-
-function submitText(event){
-    event.preventDefault();
-    let firstNameEntry = document.getElementById('firstNameText').value;
+function submitText(event){ // function to use the Submit button 
+    event.preventDefault(); // prevents default clearing of data within form element 
+    let firstNameEntry = document.getElementById('firstNameText').value; 
     let lastNameEntry = document.getElementById('lastNameText').value;
     let idEntry = document.getElementById('idText').value;
     let jobTitleEntry = document.getElementById('titleText').value;
     let salaryEntry = document.getElementById('annualSalaryText').value;
-
+//defined the location on the DOM for the different inputs 
     let newTableRowData = `
     <tr>
         <td>${firstNameEntry}</td>
@@ -23,8 +20,9 @@ function submitText(event){
         <td><button onclick="deleteRow(event)">Delete</button></td>
     </tr>
     `
-    let tableRowLocation = document.getElementById("salaryTable"); 
-    tableRowLocation.innerHTML += newTableRowData; 
+    //set up variable to hold the table row of inputted data 
+    let tableRowLocation = document.getElementById("salaryTable");  // defined variable to hold the location of the new row inside the table
+    tableRowLocation.innerHTML += newTableRowData; // adds a table row of data from the input to the table 
 
     document.getElementById('firstNameText').value='';
     document.getElementById('lastNameText').value='';
@@ -32,25 +30,27 @@ function submitText(event){
     document.getElementById('titleText').value='';
     document.getElementById('annualSalaryText').value='';
 
-    let salaryDividedByTwelve = Number(salaryEntry)/12; 
-    monthlySalaryTotal += Math.round(Number(salaryDividedByTwelve)); 
+    //clears the inputs
 
-    let updatedMonthlySalaryDisplay = document.getElementById("salaryCount")
-    updatedMonthlySalaryDisplay.textContent = (monthlySalaryTotal); 
+    let salaryDividedByTwelve = Number(salaryEntry)/12; // divides the annual salary totals to get the monthly total
+    monthlySalaryTotal += Math.round(Number(salaryDividedByTwelve)); // resets the global variable for the monthly salary total to be that variable plus any additions in the monthly cost to a rounded number
 
-    let footer = document.getElementById('footer'); 
+    
 
-    if (monthlySalaryTotal > 20000){
+    let updatedMonthlySalaryDisplay = document.getElementById("salaryCount") // creates a variable with the DOM location of where the monthly salary total is being stored
+    updatedMonthlySalaryDisplay.textContent = (monthlySalaryTotal); // updates the display of the monthly total
+
+    let footer = document.getElementById('footer'); // defines the DOM location for the footer
+
+    if (monthlySalaryTotal > 20000){ // if statement to change the CSS styling if the monthly total exceeds $20k
         footer.classList.toggle("over-budget");
         }
 
 }
 
 
-    
 
-
-function deleteRow(event){
+function deleteRow(event){ // function to delete a row and remove it from the table 
     let buttonClicked = event.target
     let toDelete =buttonClicked.parentElement.parentElement;
     toDelete.remove(); 
