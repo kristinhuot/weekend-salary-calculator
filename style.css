@@ -1,18 +1,35 @@
+body{
+    background-color: #DDD1C7;
+}
+
+h1{
+    background-color: #a2b9bc;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
+h2{
+    background-color: #b2ad7f;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+}
 table {
     width: 100%;
     text-align: left;
   }
   table, th, td {
     border: 1px solid black;
-    border-collapse: collapse;
     height: 2.15em;
+    border-radius: 5px;
+    padding: 5px;
   }
   th, td {
     padding: .5em;
     min-width: 3.5em;
   }
   thead {
-    background: #7a7a7a;
+    background: #6b5b95;
     color: #fcfcfc;
   }
   tbody tr:nth-child(odd){ 
@@ -25,6 +42,12 @@ body{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 
 }
+footer{
+   font-weight: bold; 
+}
+
 .over-budget{
-    color: red;
+    color: #ff7b25;
+    text-decoration-line: underline;
+    text-transform: uppercase;
 }
